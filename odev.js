@@ -4,7 +4,7 @@
  */
 
 var person = {
-  name: "Joe",
+  name: "John",
   message: function () {    
     console.log("Hello, " + this.name)
   }
