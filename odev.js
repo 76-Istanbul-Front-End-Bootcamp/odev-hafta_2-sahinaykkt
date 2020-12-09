@@ -10,7 +10,8 @@ var person = {
   }
 }
 
-person.message();
+var messageFunc = person.message
+messageFunc();
 
 
 /*  
