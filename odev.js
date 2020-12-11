@@ -11,7 +11,7 @@ var person = {
 }
 
 var messageFunc = person.message
-messageFunc();
+messageFunc.call(person);
 
 
 /*  
