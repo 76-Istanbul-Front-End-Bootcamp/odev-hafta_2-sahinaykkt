@@ -79,8 +79,30 @@ console.log(isValidName("X") === false);
   Ornek: katilimSaati("3", 20) 60 sonucunu vermelidir.
   Ornek: katilimSaati("5", "30") 150 sonucunu vermelidir.
 */
-function katilimSaati(dersSayisi, dersSuresi){
+function katilimSaati(dersSayisi,dersSuresi){
 
+  if((dersSayisi === false || dersSayisi === true) && (dersSuresi === false || dersSuresi === true))
+    {
+      return false;
+    }
+    let result = dersSayisi * dersSuresi
+
+  if(Number.isNaN(result)){
+    return false;
+  } else {
+    return result;
+  }
 }
+console.log(katilimSaati(false,false) === false);
+console.log(katilimSaati(false,true) === false);
+console.log(katilimSaati(true,false) === false);
+console.log(katilimSaati(true,true) === false);
+console.log(katilimSaati(10,6) === 60);
+console.log(katilimSaati(10,"6") === 60);
+console.log(katilimSaati("10",6) === 60);
+console.log(katilimSaati("10","6") === 60);
+console.log(katilimSaati(6,10.1) === 60.599999999999994);
+console.log(katilimSaati(6.1,10) === 61);
+console.log(katilimSaati(6,"10.1") === 60.599999999999994);
 
 
