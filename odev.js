@@ -28,7 +28,7 @@ var numbers = {
     this.numbers[0].map(function(number, numberIndex){
         const result = number * this.numbers[1];
         console.log(result)
-    })
+    }.bind(this))
   }
 };
 
@@ -44,7 +44,28 @@ numbers.multiply();
 */
 function isValidName(name){
 
+  if(name === null || name === false || name === undefined){
+    return false;
+  }
+
+  if(name.split("").length < 3){
+    return false;
+  }
+
+  if(name.split(" ").length > 1){
+    return false;
+  }
+  
+  return true;
 }
+console.log(isValidName("Jo hn") === false);
+console.log(isValidName("John") === true);
+console.log(isValidName(false) === false);
+console.log(isValidName(null) === false);
+console.log(isValidName(undefined) === false);
+console.log(isValidName("") === false);
+console.log(isValidName("  \t\n") === false);
+console.log(isValidName("X") === false);
 
 /*
   Odev 4:
